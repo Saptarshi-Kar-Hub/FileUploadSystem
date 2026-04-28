@@ -23,9 +23,7 @@ if (isset($_POST['submit'])) {
                 $destination = "../uploads/" . $newName;
 
                 if (move_uploaded_file($tmpName, $destination)) {
-
-                    // Insert into DB
-                    $stmt = $con->prepare("INSERT INTO files (filename) VALUES (?)");
+                    $stmt = $conn->prepare("INSERT INTO files (filename) VALUES (?)");
                     $stmt->bind_param("s", $newName);
                     $stmt->execute();
 

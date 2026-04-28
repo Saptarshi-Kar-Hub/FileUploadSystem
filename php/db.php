@@ -1,7 +1,7 @@
 <?php
-    $con = mysqli_connect("localhost","root","","fileuploadsystem");
+$conn = new mysqli("localhost","root","","fileuploadsystem");
 
-    if($con->connect_error){
-        die("Connection failed: ". $con->connect_error);
-    }
+if($conn->connect_error){
+    die("Connection failed: ". $conn->connect_error);
+}
 ?>
